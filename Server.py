@@ -5,7 +5,7 @@ import time
 import struct
 import random
 from Statistics import Statistics
-from config import *
+from config2 import *
 from Utils import get_wifi_ip
 import time
 def __init__(self, statistics, flag=True):
@@ -51,7 +51,7 @@ def __init__(self, statistics, flag=True):
     self.client_count = 0
     self.ready4game = False
 
-    # Access to questions and answers from config.py
+    # Access to questions and answers from config2.py
     self.questions = conspquestions
     self.answers = conspanswers
 

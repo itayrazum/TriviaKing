@@ -1,5 +1,5 @@
 import socket
-from TriviaKing import config
+from TriviaKing import config2
 import random
 
 def get_wifi_ip():
@@ -23,11 +23,11 @@ def get_wifi_ip():
 
 def get_and_remove_name():
     """
-    Gets a random name from the config.py list and removes it to prevent duplicates.
+    Gets a random name from the config2.py list and removes it to prevent duplicates.
 
     :return: A random name from the list, or None if the list is empty.
     """
-    if not config.names:
+    if not config2.names:
         return None  # List is empty
 
     chosen_name = random.choice(config.names)

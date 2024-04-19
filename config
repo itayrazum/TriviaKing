@@ -11,7 +11,6 @@ class Colors:
     LOVE = '\x1b[1;95m'
     JUNGLE = '\x1b[1;33;40m'
 
-
 names = [
     "Napoleong Meowparte",
     "Genghis Cat",
@@ -35,7 +34,7 @@ names = [
     "Jair Bolsonarrow"
 ]
 
-conspquestions = [
+questions = [
     # Science and Technology
     "The Earth revolves around the Sun.",
     "Dinosaurs went extinct due to a meteor impact.",
@@ -87,7 +86,7 @@ conspquestions = [
     "Parallel universes exist."
 ]
 
-conspanswers = [
+answers = [
     # Science and Technology
     True,
     True,
@@ -139,84 +138,3 @@ conspanswers = [
     False,
 ]
 
-
-video_game_statements = [
-    # Positive statements
-    "Video games improve cognitive skills.",  # True
-    "Multiplayer games foster teamwork and communication.",  # True
-    "Speedrunning enhances problem-solving abilities.",  # True
-    "Exploring open-world games stimulates creativity.",  # True
-    "Gaming can reduce stress and anxiety.",  # True
-    "Achievement hunting adds replay value to games.",  # True
-    "Game soundtracks contribute to the overall experience.",  # True
-    "E-sports require dedication and skill.",  # True
-    "Mods enhance gameplay in many PC games.",  # True
-    "Game developers often include Easter eggs.",  # True
-    "Playing retro games invokes nostalgia.",  # True
-    "Video game music can be emotionally powerful.",  # True
-    "Gaming communities provide a sense of belonging.",  # True
-    "Game design involves balancing challenge and fun.",  # True
-    "Exploring virtual worlds is an adventure.",  # True
-    "Video games encourage persistence and resilience.",  # True
-    "Local co-op games strengthen friendships.",  # True
-    "Game graphics have evolved significantly over time.",  # True
-    "Game narratives can be as impactful as books or movies.",  # True
-    "Game speedruns showcase impressive skills.",  # True
-
-    # Negative statements
-    "Graphics and visual effects significantly impact gameplay.",  # False
-    "Console gaming is more popular than PC gaming.",  # False
-    "Video games cause violence in real life.",  # False
-    "Game developers always meet release deadlines.",  # False
-    "Mobile games lack depth compared to PC/console games.",  # False
-    "Quick-time events (QTEs) are universally loved.",  # False
-    "Microtransactions improve the gaming experience.",  # False
-    "All gamers prefer competitive PvP over cooperative PvE.",  # False
-    "Single-player games are becoming obsolete.",  # False
-    "Gaming addiction affects only a small percentage of players."  # False
-]
-
-# Corresponding boolean answers
-video_games_answers = [True, True, True, True, True, True, True, True, True, True,
-                   True, True, True, True, True, True, True, True, True, True,
-                   False, False, False, False, False, False, False, False, False, False]
-
-sportquestions = [
-    "Basketball was invented in Canada.",
-    "The FIFA World Cup is held every two years.",
-    "The first modern Olympic Games were held in Athens, Greece, in 1896.",
-    "The Super Bowl is the championship game of the National Football League (NFL).",
-    "Tennis is played with a shuttlecock.",
-    "The Tour de France is a famous cycling race.",
-    "The sport of judo originated in Japan.",
-    "The term 'Hat trick' refers to scoring three goals in soccer.",
-    "The Rugby World Cup is held every four years.",
-    "The sport of cricket originated in England.",
-    "The first Wimbledon tennis championship was held in 1877.",
-    "Muhammad Ali was a famous boxer.",
-    "The New York Yankees are a baseball team.",
-    "The Olympic Games have never been held in Africa.",
-    "The Stanley Cup is awarded to the winner of the NHL playoffs.",
-    "The sport of golf originated in Scotland.",
-    "The Indianapolis 500 is a famous auto race.",
-    "Michael Phelps is a famous swimmer.",
-    "The term 'touchdown' is used in American football.",
-    "The FIFA Women's World Cup is held every four years.",
-    "The Boston Celtics are a basketball team.",
-    "The sport of volleyball was invented in the United States.",
-    "The first modern Olympic Games included only summer sports.",
-    "Roger Federer is a professional tennis player.",
-    "The sport of rugby originated in England.",
-    "The Green Bay Packers are a football team.",
-    "The sport of surfing originated in Hawaii.",
-    "The UEFA Champions League is an annual soccer tournament.",
-    "The term 'ace' is used in tennis.",
-    "The NBA Draft is an event where teams select college basketball players."
-]
-
-# List of corresponding True or False answers
-sportanswers = [
-    False, False, True, True, False, True, False, True, True, False,
-    True, True, False, False, True, True, True, True, True, True,
-    False, True, True, False, False, False, True, True, True, True
-]
