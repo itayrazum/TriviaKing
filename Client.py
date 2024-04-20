@@ -3,8 +3,7 @@ from socket import *
 from scapy.all import *
 import sys
 import traceback
-import config
-from config import *
+from config2 import *
 from Utils import get_wifi_ip
 from Utils import get_and_remove_name
 import struct

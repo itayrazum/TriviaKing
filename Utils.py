@@ -1,5 +1,5 @@
 import socket
-import config
+import config2
 import random
 
 def get_wifi_ip():
@@ -27,11 +27,11 @@ def get_and_remove_name():
 
     :return: A random name from the list, or None if the list is empty.
     """
-    if not config.names:
+    if not config2.names:
         return None  # List is empty
 
-    chosen_name = random.choice(config.names)
-    config.names.remove(chosen_name)
+    chosen_name = random.choice(config2.names)
+    config2.names.remove(chosen_name)
     return chosen_name
 
 import time
