@@ -155,7 +155,7 @@ class Server:
         :return: None
         """
         # Pack the message with magic cookie, message type, and server port
-        message = struct.pack('Ibh', 0xfeedbeef, 0x2, self.server_port) + b"Hello im the server of the conspiracy theory game! come and play!"
+        message = struct.pack('Ibh', 0xfeedbeef, 0x2, self.server_port) + b"Hello! im the server of the conspiracy theory gameY! come and play!"
 
         # Send the second message
 
@@ -447,7 +447,7 @@ class Server:
                 if count == len(self.ready_dict):
 
                     self.locky_event.set()  # Set the event if all conditions are met
-                    time.sleep(0.2)
+                    time.sleep(0.3)
                     self.locky_event.clear()  #
                     print(f'{Colors.JUNGLE} Current Question: {self.current_question}{Colors.END_COLOR}')
                     # Clear the event if not all conditions are met
