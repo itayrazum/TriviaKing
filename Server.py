@@ -155,7 +155,7 @@ class Server:
         :return: None
         """
         # Pack the message with magic cookie, message type, and server port
-        message = struct.pack('Ibh', 0xfeedbeef, 0x2, self.server_port) + b"Hello! im the server of the conspiracy theory gameY! come and play!"
+        message = struct.pack('Ibh', 0xfeedbeef, 0x2, self.server_port) + b"Hello! im the server of the conspiracy theory game! come and play!"
 
         # Send the second message
 
@@ -202,7 +202,7 @@ class Server:
 
                     client_name = client_name + str(ID_gen)
                     ID_gen += 1
-                print(f"{Colors.PLAYER}Player{Colors.END_COLOR} ", ' >> ', client_name)
+                print(f"{Colors.JUNGLE}Player{Colors.END_COLOR} ", ' >> ', client_name)
                 self.clients_sockets.append(connection_socket)
                 self.clients_sockets_dict[client_name] = connection_socket
                 self.game_participants.append(client_name)
@@ -292,7 +292,7 @@ class Server:
         msg = self.welcome_message
         i = 1
         for client in self.game_participants:
-            msg += Colors.TITLE + "Player " + str(i) + ":" + client + Colors.END_COLOR + '\n'
+            msg += Colors.PLAYER + "Player " + str(i) + ":" + client + Colors.END_COLOR + '\n'
             i += 1
         msg += f"{Colors.JUNGLE}Welcome to the jungle {client_name}{Colors.END_COLOR}"
         try:
@@ -321,7 +321,7 @@ class Server:
             self.locky_event.wait()
 
             try:
-                client_socket.send((f"{Colors.QUESTION}Question:{Colors.END_COLOR} {quest}\n" + "Press 'Y', 'T', or '1' for true, 'N', 'F', or '0' for false").encode())
+                client_socket.send((f"{Colors.JUNGLE}Question:{Colors.END_COLOR} {quest}\n" + "Press 'Y', 'T', or '1' for true, 'N', 'F', or '0' for false").encode())
                 # time.sleep(11)
                 self.ready_dict[client_name] = False
                 answer = ""
@@ -377,7 +377,8 @@ class Server:
                 self.set_winner(True,client_name)
                 for soc in self.clients_sockets_dict.values():
                     if isinstance(soc, socket.socket):
-                        soc.send((f"The winner is:" + self.winner).encode())
+                      #  f"Question:{Colors.END_COLOR}
+                        soc.send((f"{Colors.JUNGLE}The winner is: {self.winner}{Colors.END_COLOR}"  ).encode())
                         print(f"The winner is:" + self.winner)
                 return
 
