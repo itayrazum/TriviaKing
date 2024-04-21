@@ -10,7 +10,7 @@ from Utils import get_wifi_ip
 import time
 
 
-class Server:
+class Server2:
 
     def __init__(self, statistics, flag=True):
         # Socket objects for UDP and TCP communication
@@ -56,8 +56,8 @@ class Server:
         self.ready4game = False
 
         # Access to questions and answers from config.py
-        self.questions = conspquestions
-        self.answers = conspanswers
+        self.questions = video_game_statements
+        self.answers = video_games_answers
 
         # Dictionary to store client scores
         self.clients_scores = {}
@@ -91,9 +91,9 @@ class Server:
         self.locky_event = threading.Event()
         self.ready_dict = {}
         self.current_question = None
-        self.welcome_message =  "Welcome to the RazumWeiz server, Facts vs. Conspiracy Theories." + Colors.END_COLOR + '\n'
+        self.welcome_message =  "Welcome to the RazumWeiz server 2, Video Games Trivia." + Colors.END_COLOR + '\n'
 
-        self.welcome_message2 = "Hello im the server of the conspiracy theory game! come and play!"
+        self.welcome_message2 = "Hello im the server of the video games trivia! come and play!"
 
     def initiate_server(self):
         """
@@ -155,7 +155,7 @@ class Server:
         :return: None
         """
         # Pack the message with magic cookie, message type, and server port
-        message = struct.pack('Ibh', 0xfeedbeef, 0x2, self.server_port) + b"Hello! im the server of the conspiracy theory game! come and play!"
+        message = struct.pack('Ibh', 0xfeedbeef, 0x2, self.server_port) + b"Hello im the server of the video games trivia! come and play!"
 
         # Send the second message
 
@@ -468,7 +468,7 @@ def main():
     """
     statistics = Statistics()
     while True:
-        server = Server(statistics,True)
+        server = Server2(statistics,True)
         server.initiate_server()
         time.sleep(3)
 

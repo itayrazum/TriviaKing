@@ -31,6 +31,7 @@ class Client:
         self.winner_event = threading.Event()
         self.key_type_event = threading.Event()
         self.message_event = threading.Event()
+        self.answer_event = threading.Event()
         self.question_message = None
         self.server_message = None
         self.servers_dict = {}
@@ -166,7 +167,6 @@ class Client:
         :return: None
         """
         while True:
-
             self.message_event.wait()
             self.message_event.clear()
             print(self.server_message)
@@ -193,6 +193,7 @@ class Client:
                     self.key_type_event.clear()
                     break
                 time.sleep(0.1)
+            self.answer_event.clear()
 
             if (self.winner_event.is_set()):
                 try:
@@ -227,7 +228,9 @@ class Client:
         self.activate_client()  # Return to searching for server offers (UDP broadcast)
 
     def key_handel(self):
+
         while True:
+            self.answer_event.wait()
             key_event = keyboard.read_event()
             if key_event.event_type == keyboard.KEY_DOWN:
                 self.key_type_event.set()
@@ -237,6 +240,8 @@ class Client:
 
             try:
                 message = self.server_socket.recv(1024).decode()
+                if ("Question" in message):
+                    self.answer_event.set()
                 self.message_event.set()
             except socket.error as e:
                 return
