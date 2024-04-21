@@ -4,7 +4,6 @@ from scapy.all import *
 import time
 import struct
 import random
-from Statistics import Statistics
 from config2 import *
 from Utils import get_wifi_ip
 import time
@@ -456,7 +455,6 @@ class Server2:
         except RuntimeError:
             print(f"No more players, initials server.... Jungle begins agian")
     def start_server(self):
-        statistics = Statistics()
         while True:
             self.initiate_server()
             time.sleep(3)
@@ -466,9 +464,8 @@ def main():
     Main function, initialize server and starting games
     :return:
     """
-    statistics = Statistics()
     while True:
-        server = Server2(statistics,True)
+        server = Server2(True)
         server.initiate_server()
         time.sleep(3)
 

@@ -4,7 +4,6 @@ from scapy.all import *
 import time
 import struct
 import random
-from Statistics import Statistics
 from config2 import *
 from Utils import get_wifi_ip
 import time
@@ -12,7 +11,7 @@ import time
 
 class Server:
 
-    def __init__(self, statistics, flag=True):
+    def __init__(self, flag=True):
         # Socket objects for UDP and TCP communication
         self.server_socket_udp = None
         self.server_socket_tcp = None
@@ -49,7 +48,6 @@ class Server:
         self.winner_message = ""
 
         # Object for statistics tracking
-        self.statistics = statistics
 
         # Client count and game readiness flag
         self.client_count = 0
@@ -456,7 +454,6 @@ class Server:
         except RuntimeError:
             print(f"No more players, initials server.... Jungle begins agian")
     def start_server(self):
-        statistics = Statistics()
         while True:
             self.initiate_server()
             time.sleep(3)
@@ -466,9 +463,8 @@ def main():
     Main function, initialize server and starting games
     :return:
     """
-    statistics = Statistics()
     while True:
-        server = Server(statistics,True)
+        server = Server(True)
         server.initiate_server()
         time.sleep(3)
 
